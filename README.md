@@ -3,7 +3,7 @@
 To use this template: 
 
 ```bash
-gh repo create <REPOSITORY_NAME> --template lipex360x/bun-boilerplate --private --clone
+gh repo create <REPOSITORY_NAME> --template lipex360x/hono-boilerplate --private --clone
 ```
 
 To install dependencies:

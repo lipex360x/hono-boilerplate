@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    networks:
+      - database-network
+    ports:
+      - ${DATABASE_PORT}:5432
+      
+networks:
+  database-network:
+    driver: bridge

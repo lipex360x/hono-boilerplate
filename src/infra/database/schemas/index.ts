@@ -1,0 +1,6 @@
+export * from './coment-table.schema'
+export * from './comment-upvote-table.schema'
+export * from './post-table.schema'
+export * from './post-upvote-table.schema'
+export * from './session-table.schema'
+export * from './user-table.schema'

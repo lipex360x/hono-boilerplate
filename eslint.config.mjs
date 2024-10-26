@@ -19,6 +19,7 @@ export default [
   {
     rules: {
       '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/no-unsafe-function-type': 'off',
       'simple-import/imports': 'error',
       'simple-import/exports': 'error',
       'no-console': ['error', { allow: ['warn', 'error', 'info'] }],

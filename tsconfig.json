@@ -3,6 +3,8 @@
     "strict": true,
     "skipLibCheck": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "types": ["bun"],
     "paths": {
       "@/*": ["./src/*"],

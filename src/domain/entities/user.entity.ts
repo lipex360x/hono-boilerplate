@@ -6,7 +6,9 @@ export class User {
   private $password: Password
 
   constructor(
-    readonly userId: string,
+    readonly id: string,
+    readonly createdAt: Date,
+    readonly updatedAt: Date,
     readonly username: string,
     password: string,
   ) {
@@ -14,9 +16,11 @@ export class User {
   }
 
   static async create(username: string, password: string) {
-    const userId = uid(32)
+    const id = uid(32)
+    const createdAt = new Date()
+    const updatedAt = new Date()
     const passwordHash = await Password.hash(password)
-    return new User(userId, username, passwordHash)
+    return new User(id, createdAt, updatedAt, username, passwordHash)
   }
 
   async verifyPassword(password: string) {

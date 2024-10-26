@@ -1,0 +1,105 @@
+{
+	"Test Template": {
+		"prefix": "testTemplate",
+		"body": [
+			"import { faker } from '@faker-js/faker'",
+			"import { beforeEach, describe, expect, test } from 'bun:test'",
+			"",
+			"describe('${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g}${2:}', () => {",
+			"  beforeEach(() => {})",
+			"",
+			"  test('should ${3:MODIFY_THIS_TEST_TITLE}', async () => {",
+			"    const username = faker.internet.userName()",
+			"    expect(username).toBeTruthy()",
+			"  })",
+			"})",
+			"",
+		]
+	},
+	
+	"Controller Template": {
+		"prefix": "controllerTemplate",
+		"body": [
+			"import type { Context } from 'hono'",
+			"import { container } from 'tsyringe'",
+			"",
+			"export class ${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g} {",
+			"  async handler(c: Context) {",
+			"    const authorId = c.get('userId')",
+			"    const input = await c.req.json<>()",
+			"    console.log({ ...input, authorId })",
+			"    // const usecase = container.resolve()",
+			"    // const output = await usecase.execute({ ...input, authorId })",
+			"    return c.json({ class: '${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g}', ...input, authorId }, 500)",
+			"  }",
+			"}",
+			"",
+		]
+	},
+
+	"Usecase Template": {
+		"prefix": "usecaseTemplate",
+		"body": [
+			"import { inject, injectable } from 'tsyringe'",
+			"",
+			"@injectable()",
+			"export class ${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g} {",
+			"  constructor(",
+			"    @inject('repository')",
+			"    private readonly repository: Repository,",
+			"  ) {}",
+			"",
+			"  async execute(input: Input): Promise<void> {",
+			"    return {}",
+			"  }",
+			"}",
+			"",
+			"type Input = {}",
+			"",
+		]
+	},
+	
+	"Entity Template": {
+		"prefix": "entityTemplate",
+		"body": [
+			"import { uid } from 'uid'",
+			"",
+			"export class ${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g} {",
+			"  constructor(",
+			"    private readonly id: string,",
+			"    private content: string,",
+			"  ) {}",
+			"",
+			"  static create(content: string) {",
+			"    const ${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:}/g}Id = uid()",
+			"    return new ${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g}(id, content)",
+			"  }",
+			"}",
+			"",
+		]
+	},
+	
+	"Listener Template": {
+		"prefix": "listenerTemplate",
+		"body": [
+			"import { inject, injectable } from 'tsyringe'",
+			"",
+			"import type { Mediator } from '@/infra/mediator'",
+			"",
+			"@injectable()",
+			"export class ${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g} {",
+			"  constructor(",
+			"    @inject('mediator')",
+			"    private readonly mediator: Mediator,",
+			"  ) {}",
+			"",
+			"  async listen() {",
+			"    this.mediator.register('VALUE', async (data: any) => {",
+			"      console.log(data)",
+			"    })",
+			"  }",
+			"}",
+			"",
+		]
+	},	
+}

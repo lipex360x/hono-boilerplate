@@ -1,0 +1,17 @@
+meta {
+  name: Hello
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseURL}}
+  body: none
+  auth: none
+}
+
+script:pre-request {
+  const { faker } = require('@faker-js/faker');
+  
+  console.log('lorem:', faker.lorem.words(6))
+}

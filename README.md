@@ -1,21 +1,73 @@
-## Bun Template
+## Hono Template
 
-To use this template: 
+
+## Domain
+
+**Entities**
+* User Entity
+* Password Value Object
+
+<br />
+
+## Infra
+
+**Database**
+* Drizzle ORM
+* Drizzle Migrator
+* User Schema
+
+**Handlers**
+* Schema Validator
+
+**Mediator**
+* Mediator Event Pattern
+
+**Routes**
+* Hello World Route
+
+**Schemas**
+* Pagination Schema
+* ENV Schema
+
+**Types**
+* Paginated Output Repository
+* Paginated Output Usecase
+
+<br />
+
+## Tests
+* User Entity Test
+* App Mount (Dependency Injection)
+
+<br />
+
+## Using
+
+**To use this template (gh CLI):**
 
 ```bash
 gh repo create <REPOSITORY_NAME> --template lipex360x/hono-boilerplate --private --clone
 ```
 
-To install dependencies:
+**To install dependencies:**
 
 ```bash
-bun install
+bun i
 ```
 
-To run:
+**To run (dev mode):**
 
 ```bash
-bun run index.ts
+bun dev
 ```
 
-This project was created using `bun init` in bun v1.1.30. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+**To run tests:**
+
+```bash
+bun db:migrate
+```
+
+**To clean template:**
+```bash
+./clear.sh
+```

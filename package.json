@@ -1,6 +1,8 @@
 {
   "name": "hono-boilerplate",
   "scripts": {
+    "predb:migrate": "drizzle-kit generate",
+    "db:migrate": "bun run src/infra/database/migrate.ts",
     "dev": "bun run --watch src/server.ts"
   },
   "dependencies": {

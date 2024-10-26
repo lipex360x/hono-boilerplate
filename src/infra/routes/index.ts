@@ -1,1 +1,1 @@
-export * from './main.route'
+export * from './main.routes'

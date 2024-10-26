@@ -1,21 +1,23 @@
 {
-  "name": "bun-cookie",
-  "module": "index.ts",
+  "name": "hono-boilerplate",
   "scripts": {
-    "dev": "bun run src/server.ts"
+    "dev": "bun run --watch src/server.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.2",
     "@hono/zod-validator": "^0.4.1",
     "core-js": "^3.38.1",
+    "dotenv": "^16.4.5",
     "drizzle-orm": "^0.35.3",
     "hono": "^4.6.5",
     "pg": "^8.13.1",
     "tsyringe": "^4.8.0",
+    "uid": "^2.0.2",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
+    "@faker-js/faker": "^9.1.0",
     "@types/bun": "latest",
     "@types/pg": "^8.11.10",
     "drizzle-kit": "^0.26.2",
@@ -26,6 +28,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^15.11.0",
     "prettier": "^3.3.3",
+    "timekeeper": "^2.3.1",
     "typescript-eslint": "^8.9.0"
   },
   "peerDependencies": {

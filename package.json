@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.2",
+    "@hono/zod-validator": "^0.4.1",
     "core-js": "^3.38.1",
     "drizzle-orm": "^0.35.3",
     "hono": "^4.6.5",

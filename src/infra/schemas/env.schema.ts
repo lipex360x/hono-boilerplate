@@ -4,6 +4,7 @@ import { z, ZodError } from 'zod'
 
 const envSchema = z.object({
   NODE_ENV: z.string().default('develop'),
+  API_PORT: z.number({ coerce: true }).default(3000),
   DATABASE_HOST: z.string().min(1),
   DATABASE_NAME: z.string().min(1),
   DATABASE_USERNAME: z.string().min(1),
